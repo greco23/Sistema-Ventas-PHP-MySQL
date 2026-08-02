@@ -1,0 +1,12 @@
+# Archivos temporales
+*.log
+
+# Configuraciones locales
+.vscode/
+
+# Archivos de XAMPP
+xampp/
+
+# Sistema
+.DS_Store
+Thumbs.db
