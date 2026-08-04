@@ -1,6 +1,7 @@
 <?php
 
-include "conexion.php";
+include "includes/conexion.php";
+include "includes/header.php";
 
 $sql = "SELECT * FROM productos";
 
@@ -8,13 +9,6 @@ $resultado = $conexion->query($sql);
 
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Productos</title>
-    </head>
-    <body>
         <h1>Productos</h1>
         <table border="1">
         <tr>
@@ -34,9 +28,7 @@ $resultado = $conexion->query($sql);
             <td><?= $producto["stock"] ?></td>
         </tr>
         <?php  
-    }
-    ?>
+    } ?>
 
         </table>
-    </body>
-</html>
+<?php include "includes/footer.php"?>
