@@ -16,6 +16,7 @@ $resultado = $conexion->query($sql);
             <th>Nombre</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Acciones</th>
         </tr>
 
 
@@ -26,6 +27,15 @@ $resultado = $conexion->query($sql);
             <td><?= $producto["nombre"] ?></td>
             <td>$<?= $producto["precio"] ?></td>
             <td><?= $producto["stock"] ?></td>
+            <td>
+                <a href="editar_producto.php?id=<?= $producto["id"] ?>">
+                    Editar
+                </a>
+                <a href="eliminar_producto.php?id=<?= $producto["id"] ?>"
+                onclick="return confirm('¿Estás seguro de eliminar este producto?')">
+                    Eliminar
+                </a>
+            </td>
         </tr>
         <?php  
     } ?>
