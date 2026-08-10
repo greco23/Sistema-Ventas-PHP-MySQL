@@ -58,3 +58,4 @@ include "includes/header.php" ?>
     
     <button type="submit" class="w-full bg-neutral-600 text-white font-medium py-3 rounded-lg hover:bg-neutral-700 transition">Guardar</button>
 </form>
+<a href="productos.php" class="inline-block mt-4 text-sm font-medium text-gray-600 hover:text-gray-900 transition">← Volver a productos</a>

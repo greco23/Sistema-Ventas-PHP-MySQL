@@ -1,10 +1,12 @@
 <?php
 include "includes/conexion.php";
 
+$error = "";
+
 $id = $_GET["id"];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $nombre = $_POST["nombre"];
+    $nombre = trim($_POST["nombre"]);
     $precio = $_POST["precio"];
     $stock = $_POST["stock"];
 
@@ -41,6 +43,12 @@ include "includes/header.php";
 <h2 class="text-3xl font-bold text-gray-900">Editar Producto</h2>
 <p class="mt-2 text-gray-500">Modificá la información del producto</p>
 
+<?php if ($error != "") { ?>
+    <div class="mt-6 max-w-xl bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+        <?= $error ?>
+    </div>
+<?php } ?>
+
 <form method="POST" class="mt-8 max-w-xl bg-white p-8 rounded-xl shadow-sm">
         <div class="mb-5">
         <label for="producto_nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
@@ -76,4 +84,6 @@ include "includes/header.php";
         Guardar cambios
     </button>
 </form>
+<a href="productos.php" class="inline-block mt-4 text-sm font-medium text-gray-600 hover:text-gray-900 transition">← Volver a productos</a>
+
 <?php include "includes/footer.php"?>
