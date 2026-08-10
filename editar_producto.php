@@ -38,33 +38,42 @@ $producto = $resultado->fetch_assoc();
 include "includes/header.php";
 ?>
 
-<form method="POST">
+<h2 class="text-3xl font-bold text-gray-900">Editar Producto</h2>
+<p class="mt-2 text-gray-500">Modificá la información del producto</p>
 
-    <label for="producto_nombre">Nombre</label>
-    <input
-        type="text"
-        name="nombre"
-        id="producto_nombre"
-        value="<?= $producto["nombre"] ?>"
-    >
-    <br>
-    <label for="producto_precio">Precio</label>
-    <input
-        type="number"
-        name="precio"
-        id="producto_precio"
-        value="<?= $producto["precio"] ?>"
-    >
-    <br>
-    <label for="producto_stock">Cantidad</label>
-    <input
-        type="number"
-        name="stock"
-        id="producto_stock"
-        value="<?= $producto["stock"] ?>"
-    >
-    <br>
-    <button type="submit">Guardar cambios</button>
-
+<form method="POST" class="mt-8 max-w-xl bg-white p-8 rounded-xl shadow-sm">
+        <div class="mb-5">
+        <label for="producto_nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
+        <input
+            type="text"
+            name="nombre"
+            id="producto_nombre"
+            value="<?= htmlspecialchars($producto["nombre"]) ?>"
+            required
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:border-neutral-500">
+    </div>
+    <div class="mb-5">
+        <label for="producto_precio" class="block text-sm font-medium text-gray-700 mb-2">Precio</label>
+        <input
+            type="number"
+            name="precio"
+            id="producto_precio"
+            value="<?= $producto["precio"] ?>"
+            required
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:border-neutral-500">
+    </div>
+    <div class="mb-6">
+        <label for="producto_stock" class="block text-sm font-medium text-gray-700 mb-2">Stock</label>
+        <input
+            type="number"
+            name="stock"
+            id="producto_stock"
+            value="<?= $producto["stock"] ?>"
+            required
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:border-neutral-500">
+    </div>
+    <button type="submit" class="w-full bg-neutral-600 text-white font-medium py-3 rounded-lg hover:bg-neutral-700 transition">
+        Guardar cambios
+    </button>
 </form>
 <?php include "includes/footer.php"?>

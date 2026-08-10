@@ -29,25 +29,32 @@ $error = "";
 
 include "includes/header.php" ?>
 
-<h2>Agregar Producto</h2>
+<h2 class="text-3xl font-bold text-gray-900">Agregar Producto</h2>
+<p class="mt-2 text-gray-500">Añadí un nuevo producto al inventario.</p>
 
 <?php if($error != "") { ?>
-
-    <p>
-        <?php echo $error; ?>
-    </p>
-
+    <div class="mt-6 max-w-xl bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+        <?= $error ?>
+    </div>
 <?php } ?>
 
-<form method="POST">
-    <label for="producto_nombre">Nombre</label>
-    <input type="text" name="nombre" id="producto_nombre" required>
-    <br>
-    <label for="producto_precio">Precio</label>
-    <input type="number" name="precio" id="producto_precio" required>
-    <br>
-    <label for="producto_cant">Cantidad</label>
-    <input type="number" name="stock" id="producto_cant" required>
-    <br>
-    <button type="submit">Guardar</button>
+<form method="POST" class="mt-8 max-w-xl bg-white p-8 rounded-xl shadow-sm">
+    <div  class="mb-5">
+        <label for="producto_nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
+        <input type="text" name="nombre" id="producto_nombre" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:border-neutral-500"
+>
+        <br>
+    </div>
+    <div class="mb-5">
+        <label for="producto_precio">Precio</label  class="block text-sm font-medium text-gray-700 mb-2">
+        <input type="number" name="precio" id="producto_precio" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:border-neutral-500">
+        <br>
+    </div>
+    <div class="mb-6">
+        <label for="producto_cant">Cantidad</label class="block text-sm font-medium text-gray-700 mb-2">
+        <input type="number" name="stock" id="producto_cant" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:border-neutral-500">
+        <br>
+    </div>
+    
+    <button type="submit" class="w-full bg-neutral-600 text-white font-medium py-3 rounded-lg hover:bg-neutral-700 transition">Guardar</button>
 </form>
