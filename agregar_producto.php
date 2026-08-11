@@ -41,17 +41,16 @@ include "includes/header.php" ?>
 <form method="POST" class="mt-8 max-w-xl bg-white p-8 rounded-xl shadow-sm">
     <div  class="mb-5">
         <label for="producto_nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre</label>
-        <input type="text" name="nombre" id="producto_nombre" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:border-neutral-500"
->
+        <input type="text" name="nombre" id="producto_nombre" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:border-neutral-500">
         <br>
     </div>
     <div class="mb-5">
-        <label for="producto_precio">Precio</label  class="block text-sm font-medium text-gray-700 mb-2">
+        <label for="producto_precio" class="block text-sm font-medium text-gray-700 mb-2">Precio</label>
         <input type="number" name="precio" id="producto_precio" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:border-neutral-500">
         <br>
     </div>
     <div class="mb-6">
-        <label for="producto_cant">Cantidad</label class="block text-sm font-medium text-gray-700 mb-2">
+        <label for="producto_cant" class="block text-sm font-medium text-gray-700 mb-2">Cantidad</label >
         <input type="number" name="stock" id="producto_cant" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:border-neutral-500">
         <br>
     </div>
